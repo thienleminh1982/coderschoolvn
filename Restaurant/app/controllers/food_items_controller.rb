@@ -5,6 +5,10 @@ class FoodItemsController < ApplicationController
   # GET /food_items.json
   def index
     @food_items = FoodItem.all
+    # @food_items.each do |food_item|
+    #   menu = food_item.menu
+    #   Rails.logger.debug("food_item section: #{menu}")
+    # end
   end
 
   # GET /food_items/1
@@ -69,6 +73,6 @@ class FoodItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def food_item_params
-      params.require(:food_item).permit(:name, :description, :price, :section, :url)
+      params.require(:food_item).permit(:name, :description, :price, :section, :menu_id, :url)
     end
 end

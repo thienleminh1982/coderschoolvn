@@ -3,13 +3,15 @@
 one:
   name: MyString
   description: MyText
-  price: 1
+  price: 9.99
   section: MyString
+  menu_id: 
   url: MyString
 
 two:
   name: MyString
   description: MyText
-  price: 1
+  price: 9.99
   section: MyString
+  menu_id: 
   url: MyString

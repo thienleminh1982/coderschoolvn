@@ -1,0 +1,59 @@
+<script type="application/javascript">
+  //var selectedFoodItemId;
+  function displayDetail(element, foodItemId, description, url) {
+    selectedFoodItemId = foodItemId;
+    this.document.getElementById("selectedFIDescription").innerHTML = description;
+    this.document.getElementById("selectedFIURL").src = url;
+    this.document.getElementById("createOrderBtn").href = "/food_items/" + foodItemId + "/orders/new";
+
+  }
+</script>
+
+<p id="notice"><%= notice %></p>
+
+<div class="container" align="middle" style="background-color: rgba(255, 87, 0, 0.93); color:  white;">
+  <h1>Menus</h1>
+  <div class="row" style="padding: 10px;">
+    <div class="col-md-12">
+      <div class="btn-group" role="group" aria-label="Basic example">
+        <%= form_tag menus_path, :method => "get", enforce_utf8: false, class: "navbar-form", id: "rails-form" do %>
+            <% @menus.each do |menu| %>
+                <%= submit_tag menu.section, name: "section", class: (@selectButton == menu.section) ? "btn btn-warning btn-sm" : "btn btn-secondary btn-sm" %>
+            <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+</div>
+
+  <% if @food_items.present? %>
+      <div class="row" style="padding: 10px;">
+        <div class="col-md-6">
+          <% @food_items.each do |fi| %>
+              <div class="list-group">
+                <button type="button" class="list-group-item" id="foodItemButton" onclick="displayDetail(this, <%= fi.id %>, '<%= fi.description %>', '<%= fi.url %>');">
+                  <span class="label label-default label-pill pull-right"><%= fi.price %></span>
+                  <%= fi.name %>
+                </button>
+              </div>
+          <% end %>
+        </div>
+
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-block" align="center">
+              <img src="" width="300px" height="300px" id="selectedFIURL" alt="food item photo">
+            </div>
+            <div class="card-block">
+              <p class="card-text" id="selectedFIDescription"></p>
+            </div>
+          </div>
+          <div class="card-block" align="center">
+            <a href="#" class="btn btn-danger" id="createOrderBtn">Create order</a>
+          </div>
+        </div>
+      </div>
+  <% end %>

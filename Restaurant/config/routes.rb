@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
-  resources :food_items
-  get 'contacts/contactus'
+  #resources :food_items
+  resources :menus
+  get 'contacts/index'
+
+  resources :food_items do
+    resources :orders
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

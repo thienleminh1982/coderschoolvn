@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Orders</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Phone</th>
+      <th>Address</th>
+      <th>Email</th>
+      <th>Shipping price</th>
+      <th>Discount rate</th>
+      <th>Final price</th>
+      <th>Food item</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @orders.each do |order| %>
+      <tr>
+        <td><%= order.name %></td>
+        <td><%= order.phone %></td>
+        <td><%= order.address %></td>
+        <td><%= order.email %></td>
+        <td><%= order.shipping_price %></td>
+        <td><%= order.discount_rate %></td>
+        <td><%= order.final_price %></td>
+        <td><%= order.food_item_id %></td>
+        <td><%= link_to 'Show', food_item_order_path(@food_item, order) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Order', new_food_item_order_path(@food_item) %>

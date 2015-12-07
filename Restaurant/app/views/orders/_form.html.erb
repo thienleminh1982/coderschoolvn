@@ -1,0 +1,45 @@
+<%= form_for ([@food_item, @order]) do |f| %>
+    <div class="card" style="border: 3px solid rgba(255, 87, 0, 0.93); padding: 3px; ">
+      <div class="card-header" align="middle" style="background-color: rgba(255, 87, 0, 0.93); color:  white;">
+        <h2>Order form</h2>
+      </div>
+      <div class="card-block">
+        <div class="row">
+          <% if @order.errors.any? %>
+              <div id="error_explanation">
+                <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
+
+                <ul>
+                  <% @order.errors.full_messages.each do |message| %>
+                      <li><%= message %></li>
+                  <% end %>
+                </ul>
+              </div>
+          <% end %>
+        </div>
+
+        <div class="row">
+          <div class="col-md-3"> <%= f.label :name %></div>
+          <div class="col-md-9"><%= f.text_field :name %></div>
+        </div>
+        <div class="row">
+          <div class="col-md-3"><%= f.label :phone %></div>
+          <div class="col-md-9"><%= f.text_field :phone %></div>
+        </div>
+        <div class="row">
+          <div class="col-md-3"><%= f.label :address %></div>
+          <div class="col-md-9"><%= f.text_field :address %></div>
+        </div>
+        <div class="row">
+          <div class="col-md-3"><%= f.label :email %></div>
+          <div class="col-md-9"><%= f.text_field :email %></div>
+        </div>
+        <div class="row">
+          <%= f.hidden_field :food_item_id, value: @food_item.id %>
+        </div>
+      </div>
+      <div class="card-footer" align="middle" style="background-color: rgba(255, 87, 0, 0.93); color:  white;">
+        <%= f.submit class: "btn btn-secondary" %>
+      </div>
+    </div>
+<% end %>

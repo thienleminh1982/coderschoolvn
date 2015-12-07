@@ -1,0 +1,17 @@
+<div class="card" style="border: 3px solid rgba(255, 87, 0, 0.93) ; padding: 3px;">
+  <div class="card-header" align="middle" style="background-color: rgba(255, 87, 0, 0.93); color:  white;">
+    <%= @food_item.name %>
+  </div>
+
+  <div class="card-block" align="center">
+    <img src="<%= @food_item.url %>" width="300px" height="300px" id="selectedFIURL" alt="food item photo">
+  </div>
+
+  <div class="card-block">
+    <p class="card-text"><%= @food_item.description %></p>
+  </div>
+
+  <div class="card-footer" align="middle" style="background-color: rgba(255, 87, 0, 0.93); color:  white;">
+    <p class="card-text">Price: <%= @food_item.price %></p>
+  </div>
+</div>

@@ -18,7 +18,7 @@ class FoodItemsControllerTest < ActionController::TestCase
 
   test "should create food_item" do
     assert_difference('FoodItem.count') do
-      post :create, food_item: { description: @food_item.description, name: @food_item.name, price: @food_item.price, section: @food_item.section, url: @food_item.url }
+      post :create, food_item: { description: @food_item.description, menu_id: @food_item.menu_id, name: @food_item.name, price: @food_item.price, section: @food_item.section, url: @food_item.url }
     end
 
     assert_redirected_to food_item_path(assigns(:food_item))
@@ -35,7 +35,7 @@ class FoodItemsControllerTest < ActionController::TestCase
   end
 
   test "should update food_item" do
-    patch :update, id: @food_item, food_item: { description: @food_item.description, name: @food_item.name, price: @food_item.price, section: @food_item.section, url: @food_item.url }
+    patch :update, id: @food_item, food_item: { description: @food_item.description, menu_id: @food_item.menu_id, name: @food_item.name, price: @food_item.price, section: @food_item.section, url: @food_item.url }
     assert_redirected_to food_item_path(assigns(:food_item))
   end
 
