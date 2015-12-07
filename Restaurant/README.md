@@ -41,7 +41,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-![Video Walkthrough]()
+![Video Walkthrough](https://github.com/thienleminh1982/ror-week1-assignment/blob/master/Restaurant/restaurant_walkthrough.gif)
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
