@@ -1,12 +1,12 @@
 # Pre-work - *Myblog*
 
-**Myblog** is a Ruby on Rails blog application.
+**Restaurant** is a Ruby on Rails blog application, assignment on week 1.
 
 Submitted by: **Minh-Thien Le**
 
 Time spent: **20** hours spent in total
 
-URL: **https://git.heroku.com/sheltered-crag-3385.git**
+URL: **https://sheltered-crag-3385.herokuapp.com/**
 
 ## User Stories
 
